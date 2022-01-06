@@ -1,9 +1,9 @@
 def conversion(price, default_currency, output_currency):
 	
-	‘’’
+    '''
 	This function convert values from the original 
 	currency to the currency specified by the user
-	‘’’
+    '''
     c = CurrencyConverter()
     default_currency = default_currency.upper() 
     output_currency = output_currency.upper()
