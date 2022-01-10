@@ -1,5 +1,3 @@
-## Implementation of a Bitcoin price checker
-
 
 In this repository you can find a file named ```bitstamp.py``` that implements the ```get_price(currency)``` function. It queries the ```bitstamp``` bitcoin exchange to receive the current BTC price in Euro or in U.S. Dollars, depending on the currency input parameter. This function is used in the ```main.py``` file to obtain the last price in both currencies.
 
