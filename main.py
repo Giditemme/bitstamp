@@ -34,14 +34,18 @@ parser.add_argument("-sd","--specific_data", help = "Specify which information y
 
 args = parser.parse_args()
 
-value = args.crypto + args.currency # Concatenate value for API
+# By default, the chosen currency is usd
+value = args.crypto + "usd"
 
-#When the currency is not usd the program uses the module to convert the table
+create_table(value)
+"""
+If the currency inputted by the user is not usd we created a function to 
+convert values (last and open) in order to return the value with the
+correct currency
+"""
 
 if args.currency != "usd":
     convert_table(args.currency)
-
-create_table(value)
 
 if args.specific_data == "price":
     print("{} value in {} is {}".format(args.crypto, args.currency, get_price()))
@@ -53,5 +57,3 @@ else:
     print("{} value in {} is {}".format(args.crypto, args.currency, get_price()))
     print("{} 24h volume is {}".format(args.crypto, get_volume()))
     print("{} daily change is {} %".format(args.crypto, get_change()))
-
-
